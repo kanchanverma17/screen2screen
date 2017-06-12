@@ -14,11 +14,30 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+{
+    NSArray *type;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    type=[[NSArray alloc]initWithObjects:@"through segue demo",@"using singelton demo",@"delegate protocol", nil];
+    // Do any additional setup after loading the view, typically from a nib.
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+   
+    return type.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if(!cell){
+        
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        
+    }
+    cell.textLabel.text=[type objectAtIndex:indexPath.row];
+    return cell;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

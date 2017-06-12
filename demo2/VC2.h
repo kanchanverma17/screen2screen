@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  VC2.h
 //  demo2
 //
 //  Created by MAC on 12/06/17.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
-
+@interface VC2 : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *secondScreenLbl;
 
 @end
-
