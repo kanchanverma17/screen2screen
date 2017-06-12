@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "VC1.h"
 @interface ViewController ()
 
 @end
@@ -38,7 +38,24 @@
     cell.textLabel.text=[type objectAtIndex:indexPath.row];
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    VC1 *vc=[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"VC1"];
+    switch (indexPath.row) {
+        case 0:
+            vc.typeName=@"segue";
+            break;
+        case 1:
+            vc.typeName=@"singelton";
+            break;
+        case 2:
+            vc.typeName=@"delegate";
+            break;
+        default:
+            break;
+    }
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

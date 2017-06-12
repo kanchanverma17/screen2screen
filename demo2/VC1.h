@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VC1 : UIViewController
+@interface VC1 : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *VC1Textfield;
+@property(weak,nonatomic) NSString *typeName;
 
 @end

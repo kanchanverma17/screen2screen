@@ -7,7 +7,7 @@
 //
 
 #import "VC1.h"
-
+#import "VC2.h"
 @interface VC1 ()
 
 @end
@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.VC1Textfield.delegate=self;
+    
     // Do any additional setup after loading the view.
 }
 
@@ -23,9 +25,51 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)VC1Btn:(id)sender {
+    
+    if([_VC1Textfield.text isEqualToString:@""]){
+        UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"Sorry" message:@"I need some value to continue" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *act=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:act];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    else
+    {
+        
+    }
+    
+    
 }
 
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if([_VC1Textfield.text isEqualToString:@""]){
+        UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"Sorry" message:@"I need some value to continue" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *act=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:act];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    else
+    {
+        if([self.typeName containsString:@"segue"])
+        {
+            VC2 *destinationVC;
+            destinationVC=[segue destinationViewController];
+            destinationVC.lblStr=self.VC1Textfield.text;
+        }
+    }
+
+  
+    
+}
 /*
 #pragma mark - Navigation
 

@@ -18,7 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    self.secondScreenLbl.text=self.lblStr;
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

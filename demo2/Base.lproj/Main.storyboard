@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12100" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12100" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Uy8-zI-XP0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,12 +22,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qv6-G3-jwv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qv6-G3-jwv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="n2c-jQ-sb5">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n2c-jQ-sb5" id="dSp-50-UKq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -43,20 +43,37 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Qv6-G3-jwv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4t1-3W-dKi"/>
+                            <constraint firstItem="Qv6-G3-jwv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-44" id="8iR-Qv-fQg"/>
                             <constraint firstItem="Qv6-G3-jwv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CCg-pG-Eig"/>
-                            <constraint firstItem="Qv6-G3-jwv" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="DZ3-lF-Qwt"/>
+                            <constraint firstItem="Qv6-G3-jwv" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="-20" id="DZ3-lF-Qwt"/>
                             <constraint firstItem="Qv6-G3-jwv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="NjZ-Tt-iae"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nEx-Ba-lVY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hDY-VR-ctr">
+            <objects>
+                <navigationController id="Uy8-zI-XP0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3cN-32-Wkx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9uD-hj-qsS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22f-5U-zwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-770" y="-38"/>
+        </scene>
         <!--VC1-->
         <scene sceneID="HBG-9h-KhT">
             <objects>
-                <viewController id="LAG-PM-HGI" customClass="VC1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC1" id="LAG-PM-HGI" customClass="VC1" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kWJ-hi-SFc"/>
                         <viewControllerLayoutGuide type="bottom" id="wqZ-At-uex"/>
@@ -109,7 +126,7 @@
         <!--VC2-->
         <scene sceneID="W5V-5E-uG2">
             <objects>
-                <viewController id="Exm-RH-UjG" customClass="VC2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC2" id="Exm-RH-UjG" customClass="VC2" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ck3-mk-ejf"/>
                         <viewControllerLayoutGuide type="bottom" id="UR3-8y-uCT"/>
