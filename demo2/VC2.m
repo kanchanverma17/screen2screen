@@ -7,7 +7,7 @@
 //
 
 #import "VC2.h"
-
+#import "applictionMode.h"
 @interface VC2 ()
 
 @end
@@ -19,8 +19,13 @@
     // Do any additional setup after loading the view.
 }
 -(void)viewWillAppear:(BOOL)animated{
+    NSString *mode=[applictionMode sharedapplictionMode].ThisIsHowWeDoIt;
+    if([mode containsString:@"segue"]){
     self.secondScreenLbl.text=self.lblStr;
-    
+    }
+    if([mode containsString:@"singelton"]){
+        self.secondScreenLbl.text=[applictionMode sharedapplictionMode].valuetobePassed;
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

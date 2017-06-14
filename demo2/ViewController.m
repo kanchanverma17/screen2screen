@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "VC1.h"
+#import "applictionMode.h"
 @interface ViewController ()
 
 @end
@@ -40,22 +41,25 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     VC1 *vc=[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"VC1"];
+    NSString *typeName1;
     switch (indexPath.row) {
         case 0:
             vc.typeName=@"segue";
+     typeName1=@"segue";
             break;
         case 1:
-            vc.typeName=@"singelton";
+            typeName1=@"singelton";
             break;
         case 2:
-            vc.typeName=@"delegate";
+            typeName1=@"delegate";
             break;
         case 3:
-            vc.typeName=@"notifiaction/observer";
+            typeName1=@"notifiaction/observer";
             break;
         default:
             break;
     }
+    [applictionMode sharedapplictionMode].ThisIsHowWeDoIt=typeName1;
     [self.navigationController pushViewController:vc animated:YES];
     
 }

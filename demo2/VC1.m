@@ -8,6 +8,7 @@
 
 #import "VC1.h"
 #import "VC2.h"
+#import "applictionMode.h"
 @interface VC1 ()
 
 @end
@@ -64,6 +65,10 @@
             VC2 *destinationVC;
             destinationVC=[segue destinationViewController];
             destinationVC.lblStr=self.VC1Textfield.text;
+        }
+        if([[applictionMode sharedapplictionMode].ThisIsHowWeDoIt containsString:@"singelton"])
+        {
+            [applictionMode sharedapplictionMode].valuetobePassed=self.VC1Textfield.text;
         }
     }
 

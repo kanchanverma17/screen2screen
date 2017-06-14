@@ -11,4 +11,5 @@
 @interface applictionMode : NSObject
 +(applictionMode *)sharedapplictionMode;
 @property(strong)NSString *ThisIsHowWeDoIt;
+@property(strong)NSString *valuetobePassed;
 @end
