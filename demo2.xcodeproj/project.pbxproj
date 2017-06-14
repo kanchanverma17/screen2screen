@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B42C22A1EF10F370004F39C /* applictionMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42C2291EF10F370004F39C /* applictionMode.m */; };
 		0B93828B1EEEA09F00B71AD5 /* VC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B93828A1EEEA09F00B71AD5 /* VC2.m */; };
 		0B93828E1EEEA0B400B71AD5 /* VC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B93828D1EEEA0B400B71AD5 /* VC1.m */; };
 		0BED7E451EEE990200A1670D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BED7E441EEE990200A1670D /* main.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B42C2281EF10F370004F39C /* applictionMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = applictionMode.h; sourceTree = "<group>"; };
+		0B42C2291EF10F370004F39C /* applictionMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = applictionMode.m; sourceTree = "<group>"; };
 		0B9382891EEEA09F00B71AD5 /* VC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC2.h; sourceTree = "<group>"; };
 		0B93828A1EEEA09F00B71AD5 /* VC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC2.m; sourceTree = "<group>"; };
 		0B93828C1EEEA0B400B71AD5 /* VC1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC1.h; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 				0B93828A1EEEA09F00B71AD5 /* VC2.m */,
 				0B93828C1EEEA0B400B71AD5 /* VC1.h */,
 				0B93828D1EEEA0B400B71AD5 /* VC1.m */,
+				0B42C2281EF10F370004F39C /* applictionMode.h */,
+				0B42C2291EF10F370004F39C /* applictionMode.m */,
 			);
 			path = demo2;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				0BED7E4B1EEE990300A1670D /* ViewController.m in Sources */,
 				0BED7E481EEE990200A1670D /* AppDelegate.m in Sources */,
 				0B93828E1EEEA0B400B71AD5 /* VC1.m in Sources */,
+				0B42C22A1EF10F370004F39C /* applictionMode.m in Sources */,
 				0BED7E451EEE990200A1670D /* main.m in Sources */,
 				0B93828B1EEEA09F00B71AD5 /* VC2.m in Sources */,
 			);
