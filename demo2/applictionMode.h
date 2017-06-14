@@ -10,4 +10,5 @@
 
 @interface applictionMode : NSObject
 +(applictionMode *)sharedapplictionMode;
+@property(strong)NSString *ThisIsHowWeDoIt;
 @end
