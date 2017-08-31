@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+//@protocol demodelegate <NSObject>
+//
+//<#methods#>
+//
+//@end
+
+
 @interface VC2 : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *secondScreenLbl;
 @property(weak,nonatomic) NSString *lblStr;

@@ -16,9 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setThisLbl:) name:@"EventOccured" object:nil];
     // Do any additional setup after loading the view.
 }
+
+
 -(void)viewWillAppear:(BOOL)animated{
+   
     NSString *mode=[applictionMode sharedapplictionMode].ThisIsHowWeDoIt;
     if([mode containsString:@"segue"]){
     self.secondScreenLbl.text=self.lblStr;
@@ -26,20 +30,27 @@
     if([mode containsString:@"singelton"]){
         self.secondScreenLbl.text=[applictionMode sharedapplictionMode].valuetobePassed;
     }
+   
+   
 }
+
+
+-(void)setThisLbl:(NSNotification *)notify
+{
+    NSDictionary *valueDict=[[NSDictionary alloc]initWithDictionary:notify.userInfo];
+    
+    self.secondScreenLbl.text = [valueDict objectForKey:@"TfValue"];
+}
+
+
+-(void)viewDidAppear:(BOOL)animated{
+  
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

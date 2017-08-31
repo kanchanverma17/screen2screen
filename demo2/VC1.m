@@ -30,18 +30,29 @@
 - (IBAction)VC1Btn:(id)sender {
     
     if([_VC1Textfield.text isEqualToString:@""]){
+       
         UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"Sorry" message:@"I need some value to continue" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *act=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:act];
         [self presentViewController:alert animated:YES completion:nil];
+        
         return;
     }
-    else
+   
+    if([[applictionMode sharedapplictionMode].ThisIsHowWeDoIt containsString:@"notification"])
     {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSDictionary *dict=[[NSDictionary alloc]initWithObjects:[[NSArray alloc]initWithObjects:self.VC1Textfield.text, nil] forKeys:[[NSArray alloc]initWithObjects:@"TfValue", nil]];
+            
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"EventOccured" object:self userInfo:dict];
+            
+            //for notification to work properly has to be working on main thead
+        });
+        
         
     }
-    
-    
 }
 
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
@@ -70,6 +81,7 @@
         {
             [applictionMode sharedapplictionMode].valuetobePassed=self.VC1Textfield.text;
         }
+       
     }
 
   
