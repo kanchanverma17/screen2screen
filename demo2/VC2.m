@@ -24,7 +24,8 @@
 -(void)viewWillAppear:(BOOL)animated{
    
     NSString *mode=[applictionMode sharedapplictionMode].ThisIsHowWeDoIt;
-    if([mode containsString:@"segue"]){
+    if([mode containsString:@"segue"])
+    {
     self.secondScreenLbl.text=self.lblStr;
     }
     if([mode containsString:@"singelton"]){

@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-type=[[NSArray alloc]initWithObjects:@"through segue demo",@"using singelton demo",@"delegate protocol",@"notifiaction observer",nil];
+    type=[[NSArray alloc]initWithObjects:@"through segue demo",@"using singelton demo",@"delegate protocol",@"notifiaction observer",nil];
     // Do any additional setup after loading the view, typically from a nib.
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
