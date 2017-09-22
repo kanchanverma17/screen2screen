@@ -17,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.VC1Textfield.delegate=self;
+   
+ 
     
     // Do any additional setup after loading the view.
 }
@@ -51,8 +52,14 @@
             //for notification to work properly has to be working on main thead
         });
         
-        
+        return;
     }
+    if([[applictionMode sharedapplictionMode].ThisIsHowWeDoIt containsString:@"delegate"])
+    {
+       
+        return;
+    }
+   
 }
 
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
@@ -83,10 +90,20 @@
         }
        
     }
-
-  
+   
+    if([[applictionMode sharedapplictionMode].ThisIsHowWeDoIt containsString:@"delegate"])
+    {
+        VC2 *destinationVC;
+        destinationVC=[segue destinationViewController];
+        destinationVC.FirstScreenDel = self;
+        
+    }
     
 }
+-(NSString *)firstScreenTxtFld{
+    return self.VC1Textfield.text;
+}
+
 /*
 #pragma mark - Navigation
 
