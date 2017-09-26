@@ -8,14 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-//@protocol demodelegate <NSObject>
-//
-//<#methods#>
-//
-//@end
+@protocol FirstScreen <NSObject>
 
+-(NSString *)firstScreenTxtFld;
+
+@end
+
+
+#import "VC1.h"
 
 @interface VC2 : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *secondScreenLbl;
+@property(weak,nonatomic) id <FirstScreen> FirstScreenDel;
 @property(weak,nonatomic) NSString *lblStr;
 @end

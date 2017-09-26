@@ -13,10 +13,12 @@
 @end
 
 @implementation VC2
-
+VC1 *firstScreenObj;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setThisLbl:) name:@"EventOccured" object:nil];
+    firstScreenObj = [[VC1 alloc]init];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -27,13 +29,25 @@
     if([mode containsString:@"segue"])
     {
     self.secondScreenLbl.text=self.lblStr;
+        return;
     }
     if([mode containsString:@"singelton"]){
         self.secondScreenLbl.text=[applictionMode sharedapplictionMode].valuetobePassed;
+        return;
     }
-   
+    if([mode containsString:@"delegate"])
+    {
+        if(_FirstScreenDel)
+        {
+            NSString *textLbl = [self.FirstScreenDel firstScreenTxtFld];
+            self.secondScreenLbl.text = textLbl;
+        }
+        return;
+    }
+
    
 }
+
 
 
 -(void)setThisLbl:(NSNotification *)notify

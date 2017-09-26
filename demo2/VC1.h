@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VC2.h"
 
-@interface VC1 : UIViewController<UITextFieldDelegate>
+
+@interface VC1 : UIViewController<UITextFieldDelegate,FirstScreen>
+
 @property (weak, nonatomic) IBOutlet UITextField *VC1Textfield;
 @property(weak,nonatomic) NSString *typeName;
 
